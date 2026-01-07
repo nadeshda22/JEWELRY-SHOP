@@ -18,6 +18,11 @@
                 <a href="catalog.html" class="nav-link active">Каталог</a>
                 <a href="contacts.html" class="nav-link">Контакты</a>
             </nav>
+            <div class="header-icons">
+            <a href="cart.html" class="icon-link cart-icon">
+                🛒 <span id="cart-count">0</span>
+            </a>
+        </div>
         </div>
     </header>
 
@@ -255,6 +260,50 @@
             </div>
         </div>
     </footer>
+    <script src="js/cart.js"></script>
     <script src="js/filter.js"></script>
+    <script>
+        // Вспомогательная функция для добавления в корзину из карточки
+        function addToCartFromCard(button) {
+            const productCard = button.closest('.product-card');
+            const product = getProductInfo(productCard);
+            addToCart(product);
+            
+            // Анимация кнопки
+            button.classList.add('added-animation');
+            button.textContent = '✓ Добавлено';
+            button.classList.add('added');
+            
+            setTimeout(() => {
+                button.textContent = 'В корзину';
+                button.classList.remove('added');
+                button.classList.remove('added-animation');
+            }, 2000);
+        }
+        
+        // Функция для получения информации о товаре (должна быть в cart.js)
+        function getProductInfo(productCard) {
+            let productId = productCard.getAttribute('data-id');
+            if (!productId) {
+                productId = Date.now() + Math.random().toString(36).substr(2, 9);
+                productCard.setAttribute('data-id', productId);
+            }
+            
+            const productName = productCard.querySelector('.product-name').textContent.trim();
+            const productPriceText = productCard.querySelector('.product-price').textContent;
+            const productPrice = parseInt(productPriceText.replace(/[^\d]/g, ''));
+            const productImage = productCard.querySelector('img').src;
+            const productMaterial = productCard.getAttribute('data-material') || '';
+            
+            return {
+                id: productId,
+                name: productName,
+                price: productPrice,
+                image: productImage,
+                material: productMaterial,
+                quantity: 1
+            };
+        }
+    </script>
 </body>
 </html>
