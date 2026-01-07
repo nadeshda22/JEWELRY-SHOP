@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Jewelry - Каталог</title>
+    <meta name="description" content="Каталог ювелирных украшений Luxury Jewelry. Фильтр по цене, материалу и категории. Купить золотые и серебряные украшения в Минске.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo.png" alt="Luxury Jewelry"></a>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="catalog.html" class="nav-link active">Каталог</a>
+                <a href="contacts.html" class="nav-link">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Заголовок каталога по центру -->
+            <h1 class="catalog-title">Каталог украшений</h1>
+            
+            <div class="catalog-layout">
+                <!-- Фильтры слева -->
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h3>Фильтры</h3>
+                        
+                        <div class="filter-group">
+                            <h4>Цена, ₽</h4>
+                            <input type="range" min="0" max="100000" value="100000" class="price-slider" id="priceSlider">
+                            <div class="price-range">
+                                <span class="min-price">0</span>
+                                <span class="max-price">100 000</span>
+                            </div>
+                            <div class="current-price" id="currentPrice">100 000 ₽</div>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h4>Материал</h4>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" class="material-filter" value="gold">
+                                <span class="checkmark"></span>
+                                Золото
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" class="material-filter" value="silver">
+                                <span class="checkmark"></span>
+                                Серебро
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" class="stones-filter" value="with-stones">
+                                <span class="checkmark"></span>
+                                С камнями
+                            </label>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h4>Категория</h4>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" class="category-filter" value="rings">
+                                <span class="checkmark"></span>
+                                Кольца
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" class="category-filter" value="earrings">
+                                <span class="checkmark"></span>
+                                Серьги
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" class="category-filter" value="pendants">
+                                <span class="checkmark"></span>
+                                Подвески
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" class="category-filter" value="bracelets">
+                                <span class="checkmark"></span>
+                                Браслеты
+                            </label>
+                        </div>
+                        
+                        <button class="btn btn-filter">Применить фильтры</button>
+                        <button class="btn btn-reset">Сбросить все</button>
+                    </div>
+                </aside>
+
+                <!-- Товары справа -->
+                <section class="products-section">
+                    <div class="products-grid">
+                        <!-- Товар 1 -->
+                        <div class="product-card" data-material="gold" data-stones="true" data-category="rings" data-price="45900">
+                            <div class="product-image">
+                                <img src="img/ring1.jpg" alt="Кольцо золотое с бриллиантом">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Кольцо "Афина"</h3>
+                                <p class="product-description">Золото 585, бриллиант 0.3 карата</p>
+                                <div class="product-price">45 900 ₽</div>
+                                <button class="btn btn-cart">В корзину</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Товар 2 -->
+                        <div class="product-card" data-material="gold" data-stones="true" data-category="earrings" data-price="32500">
+                            <div class="product-image">
+                                <img src="img/earrings1.jpg" alt="Серьги золотые">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Серьги "Нежность"</h3>
+                                <p class="product-description">Золото 585, фианиты</p>
+                                <div class="product-price">32 500 ₽</div>
+                                <button class="btn btn-cart">В корзину</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Товар 3 -->
+                        <div class="product-card" data-material="silver" data-stones="true" data-category="rings" data-price="12800">
+                            <div class="product-image">
+                                <img src="img/ring2.jpg" alt="Кольцо серебряное">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Кольцо "Луна"</h3>
+                                <p class="product-description">Серебро 925, цирконий</p>
+                                <div class="product-price">12 800 ₽</div>
+                                <button class="btn btn-cart">В корзину</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Товар 4 -->
+                        <div class="product-card" data-material="gold" data-stones="true" data-category="earrings" data-price="28700">
+                            <div class="product-image">
+                                <img src="img/earrings2.jpg" alt="Серьги каскадные">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Серьги "Каскад"</h3>
+                                <p class="product-description">Золото 585, жемчуг</p>
+                                <div class="product-price">28 700 ₽</div>
+                                <button class="btn btn-cart">В корзину</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Товар 5 -->
+                        <div class="product-card" data-material="silver" data-stones="true" data-category="rings" data-price="24300">
+                            <div class="product-image">
+                                <img src="img/ring3.jpg" alt="Кольцо обручальное">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Кольцо</h3>
+                                <p class="product-description">Серебро, бриллианты</p>
+                                <div class="product-price">24 300 ₽</div>
+                                <button class="btn btn-cart">В корзину</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Товар 6 -->
+                        <div class="product-card" data-material="silver" data-stones="false" data-category="earrings" data-price="39900">
+                            <div class="product-image">
+                                <img src="img/earrings22.jpg" alt="Серьги гвоздики">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Серьги "Мини"</h3>
+                                <p class="product-description">Серебро 995</p>
+                                <div class="product-price">39 900 ₽</div>
+                                <button class="btn btn-cart">В корзину</button>
+                            </div>
+                        </div>
+
+                         <!-- Товар 7 -->
+                        <div class="product-card" data-material="gold" data-stones="true" data-category="pendants" data-price="21500">
+                            <div class="product-image">
+                                <img src="img/pendant1.jpg" alt="Подвеска Венера">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Подвеска "Венера"</h3>
+                                <p class="product-description">Золото 585, бриллиант 0.2 карата</p>
+                                <div class="product-price">21 500 ₽</div>
+                                <button class="btn btn-cart">В корзину</button>
+                            </div>
+                        </div>
+
+                        <!-- Товар 8 -->
+                        <div class="product-card" data-material="gold" data-stones="false" data-category="bracelets" data-price="38700">
+                            <div class="product-image">
+                                <img src="img/bracelet1.jpg" alt="Браслет Афродита">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Браслет "Афродита"</h3>
+                                <p class="product-description">Золото 585, без вставок</p>
+                                <div class="product-price">38 700 ₽</div>
+                                <button class="btn btn-cart">В корзину</button>
+                            </div>
+                        </div>
+
+                        <!-- Товар 9 -->
+                        <div class="product-card" data-material="silver" data-stones="true" data-category="rings" data-price="16800">
+                            <div class="product-image">
+                                <img src="img/ring4.jpg" alt="Кольцо Артемида">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Кольцо "Артемида"</h3>
+                                <p class="product-description">Серебро 925, лунный камень</p>
+                                <div class="product-price">16 800 ₽</div>
+                                <button class="btn btn-cart">В корзину</button>
+                            </div>
+                        </div>
+
+                        <!-- Товар 10 -->
+                        <div class="product-card" data-material="gold" data-stones="true" data-category="earrings" data-price="42500">
+                            <div class="product-image">
+                                <img src="img/earrings3.jpg" alt="Серьги Аврора">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Серьги "Аврора"</h3>
+                                <p class="product-description">Золото 585, сапфиры</p>
+                                <div class="product-price">42 500 ₽</div>
+                                <button class="btn btn-cart">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Luxury Jewelry</h3>
+                    <p>Ювелирные изделия высочайшего качества с 2010 года.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <p>📞 +375 (33) 123-45-67</p>
+                    <p>✉️ info@luxury-jewelry.ru</p>
+                    <p>📍 Минск, ул. Драгоценная, 10</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Подписка</h3>
+                    <p>Узнавайте первыми о новых коллекциях</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Ваш e-mail" required>
+                        <button type="submit">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Luxury Jewelry. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/filter.js"></script>
+</body>
+</html>
